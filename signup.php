@@ -37,7 +37,7 @@
     <!--End of sign up alart-->
 
         <p>First Name</p>
-        <input type="text" name="FirstName" placeholder="First name" required value="<?php echo $FirstName ?>">>
+        <input type="text" name="FirstName" placeholder="First name" required value="<?php echo $FirstName ?>">
         <p>Last Name</p>
         <input type="text" name="LastName" placeholder="Last name">
         <p>Phone Number</p>

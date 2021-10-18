@@ -23,7 +23,7 @@
 <!--End of forgot alart-->
     <form action="forgot_pass.php" method="post" autocomplete="off">
         <p>Enter your registered email</p>
-        <input type="email" name="email" placeholder="Enter your Email address" required value="<?php echo $email ?>">>
+        <input type="email" name="email" placeholder="Enter your Email address" required value="<?php echo $email ?>">
         <button type="submit" name="check_email">Check</button>
     </form>      
 </div>

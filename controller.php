@@ -37,7 +37,7 @@ if(isset($_POST['signup'])){
                 $_SESSION['info'] = $info;
                 $_SESSION['email'] = $email;
                 $_SESSION['password'] = $password;
-                header('location: userotp.php');
+                header('location: check_otp.php');
                 exit();
             }else{
                 $errors['otp-error'] = "Failed while sending code!";
@@ -172,10 +172,10 @@ if(isset($_POST['signup'])){
                 if($run_query){
                     $info = "Your password changed. Now you can login with your new password.";
                     $_SESSION['info'] = $info;
-                    header('Location: password-changed.php');
+                    header('Location: changed_pass.php');
                 }else{
                     $errors['db-error'] = "Failed to change your password!";
                 }
             }
         }
-        
+?>
