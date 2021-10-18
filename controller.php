@@ -1,8 +1,10 @@
 <?php 
 session_start();
 require "connection.php";
-$email = "";
 $FirstName = "";
+$LastName = "";
+$Phone = "";
+$email = "";
 $errors = array();
 
 //Sign up confirmation and verification//
@@ -178,4 +180,9 @@ if(isset($_POST['signup'])){
                 }
             }
         }
+    
+   //if login now button click
+   if(isset($_POST['login-now'])){
+    header('Location: login_view.php');
+}
 ?>
