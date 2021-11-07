@@ -18,7 +18,7 @@ $server = 'http://' . $_SERVER['SERVER_NAME'] . '/lostandfound/';
               <div class="nav-bar">
                 <div class="brand">
                   <a href="#main-body">
-                    <h2><a href="home.php"> RECO</h2>
+                    <h2><a href="index.php"> RECO</h2>
                   </a>
                 </div>
                 <div class="nav-list">
@@ -26,9 +26,10 @@ $server = 'http://' . $_SERVER['SERVER_NAME'] . '/lostandfound/';
                     <div class="bar"></div>
                   </div>
                   <ul>
-                    <li><a href="index.php" data-after="Publish">Publish Items</a></li>
+                    <li><a href="Finder.php" data-after="found">Found an Item</a></li>
+                    <li><a href="Lost.php" data-after="Lost">Lost an Item</a></li>
                     <li><a href="Search.php" data-after="Search">Search Items</a></li>
-                    <li><a href="Login.php" data-after="Login">Login</a></li>
+                    <li><a href="profile.php" data-after="Profile">Profile</a></li>
                     <li><a href="about.php" data-after="About">About</a></li>
                     <li><a href="contact.php" data-after="Contact">Contact us</a></li>
                     <li><a href="logout.php" data-after="Logout">Logout</a></li>

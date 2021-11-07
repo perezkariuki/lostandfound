@@ -1,6 +1,6 @@
 <?php require_once "controller.php"; ?>
 <!--header -->
-<?php require('repetative/header.php') ?>
+<?php require('repetative/Main_header.php') ?>
 
 <?php 
 $email = $_SESSION['email'];
