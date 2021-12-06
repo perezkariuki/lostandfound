@@ -185,4 +185,19 @@ if(isset($_POST['signup'])){
    if(isset($_POST['login-now'])){
     header('Location: login_view.php');
 }
+
+//finder db connection(finderdb)
+if(isset($_POST['finderdb'])){
+    $img = mysqli_real_escape_string($con, $_POST['img']);
+    $category = mysqli_real_escape_string($con, $_POST['category']);
+    $serial = mysqli_real_escape_string($con, $_POST['serial']);
+    $brand = mysqli_real_escape_string($con, $_POST['brand']);
+    $colour = mysqli_real_escape_string($con, $_POST['colour']);
+    $datetime = mysqli_real_escape_string($con, $_POST['datetime']);
+    $location = mysqli_real_escape_string($con, $_POST['location']);
+    $description = mysqli_real_escape_string($con, $_POST['description']);
+    $insert_data = "INSERT INTO foundItems (img, category, serial, brand, colour, datetime, location, description)
+                        values('$img', '$category', '$serial', '$brand', '$colour', '$datetime', '$location', '$description')";
+    }
+    
 ?>
