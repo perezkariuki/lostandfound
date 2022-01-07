@@ -186,18 +186,64 @@ if(isset($_POST['signup'])){
     header('Location: login_view.php');
 }
 
-//finder db connection(finderdb)
+// edit profile
+if(isset($_POST['profedit'])){
+    $FirstName = mysqli_real_escape_string($con, $_POST['FirstName']);
+    $LastName = mysqli_real_escape_string($con, $_POST['LastName']);
+    $Phone = mysqli_real_escape_string($con, $_POST['Phone']);
+    $email = mysqli_real_escape_string($con, $_POST['email']);
+
+    $change="UPDATE credentials SET FirstName ='$FirstName',LastName ='$LastName',Phone ='$Phone',email ='$email' where id ='$_SESSION[id]'";
+    $run_query_inf = mysqli_query($con, $change);
+                if($run_query_inf){
+                    $info = "Profile successfully updated";
+                    $_SESSION['info'] = $info;
+                    header('Location: index.php');
+}else{
+    $errors['prof-error'] = "Failed to change your profile!";
+}
+}
+
+//finders script
 if(isset($_POST['finderdb'])){
-    $img = mysqli_real_escape_string($con, $_POST['img']);
-    $category = mysqli_real_escape_string($con, $_POST['category']);
-    $serial = mysqli_real_escape_string($con, $_POST['serial']);
-    $brand = mysqli_real_escape_string($con, $_POST['brand']);
-    $colour = mysqli_real_escape_string($con, $_POST['colour']);
-    $datetime = mysqli_real_escape_string($con, $_POST['datetime']);
-    $location = mysqli_real_escape_string($con, $_POST['location']);
-    $description = mysqli_real_escape_string($con, $_POST['description']);
-    $insert_data = "INSERT INTO foundItems (img, category, serial, brand, colour, datetime, location, description)
-                        values('$img', '$category', '$serial', '$brand', '$colour', '$datetime', '$location', '$description')";
+    $img =  $_POST['img'];
+    $category = $_POST['category'];
+    $serial =  $_POST['serial'];
+    $brand = $_POST['brand'];
+    $colour = $_POST['colour'];
+    $datetime = $_POST['datetime'];
+    $location = $_POST['location'];
+    $description = $_POST['description'];
+    $credentials_id = $_SESSION['id'];
+
+    $sql = "INSERT INTO foundItems (img, category, serial, brand, colour, datetime, location, description, credentials_id) VALUES('$img', '$category', '$serial', '$brand', '$colour', '$datetime', '$location', '$description', '$credentials_id')";
+
+    if(mysqli_query($con, $sql)){
+        echo "<h3>data stored in a database successfully.";
+
+    } else{
+        $errors['find-error'] = "Failed to upload your findings";
     }
+    }
+
+//lost items script
+if(isset($_POST['lostdb'])){
+        $img =  $_POST['img'];
+        $category = $_POST['category'];
+        $serial =  $_POST['serial'];
+        $brand = $_POST['brand'];
+        $colour = $_POST['colour'];
+        $datetime = $_POST['datetime'];
+        $location = $_POST['location'];
+        $description = $_POST['description'];
+        $credentials_id = $_SESSION['id'];
     
-?>
+        $sqln = "INSERT INTO lostItems (img, category, serial, brand, colour, datetime, location, description, credentials_id) VALUES('$img', '$category', '$serial', '$brand', '$colour', '$datetime', '$location', '$description', '$credentials_id')";
+    
+        if(mysqli_query($con, $sqln)){
+            echo "<h3>data stored in a database successfully.";
+    
+        } else{
+            $errors['find-error'] = "Failed to upload your lost item";
+        }
+        }

@@ -13,8 +13,10 @@ if($email != false && $password != false){
         $status = $fetch_info['status'];
         $code = $fetch_info['code'];
         if($status == "verified"){
+            $_SESSION['id'] = $fetch_info['id'];
             if($code != 0){
-                header('Location: reset-code.php');
+              
+                header('Location: reset_otp.php');
             }
         }else{
             header('Location: user_otp.php');
@@ -32,7 +34,7 @@ if($email != false && $password != false){
         <h2> <?php echo $fetch_info['FirstName'] ?> <?php echo $fetch_info['LastName'] ?> Welcome to RECO a lost and found system <br>
           This is a system that helps in solving the problem of Lost or Stolen item by connecting the owner or the finder of a product to the respective individual.
         </h2>
-        <a href="#projects" type="button" class="cta">I'VE FOUND AN ITEM</a>
+        <a href="finder.php" type="button" class="cta">I'VE FOUND AN ITEM</a>
         <a href="#projects" type="button" class="cta">I'VE LOST AN ITEM</a>
       </div>
     </div>

@@ -22,9 +22,9 @@
 <section class="split right">
     <div id="report-form">
     <div class="centered" >
-    <h1>Found Item Form</h1>
+    <h1>Lost Item Form</h1>
     <p class="p2">Please fill in all the relevant details accurately</P>
-    <form action="finder.php" method="POST" autocomplete="">
+    <form action="lost.php" method="POST" autocomplete="">
 
     <!--Sign up alert-->
     <?php
@@ -54,7 +54,7 @@
         ?>
     <!--End of sign up alart-->
     
-        <p>Image of the Item found</p>
+        <p>Image of the Item Lost</p>
         <input type="file" id="img" name="img" accept="image/*">
         <p for="category">Choose the category of the item:</p>
         <fieldset>
@@ -83,7 +83,7 @@
         <input id="where" type="text" name="location" placeholder="location">
         <p>Special Description</p>
         <textarea id="description" name="description" rows="4" cols="42" placeholder="e.g it contains yellow zips or got lost on an event"></textarea>
-        <button type="submit" name ="finderdb" value="finderdb">Submit</button>
+        <button type="submit" name ="lostdb" value="lostdb">Submit</button>
     </form>
     </div>
     </div>
@@ -91,10 +91,10 @@
 
 <section class="split left">
     <d class="centered" >
-    <p>Publish a found item on RECO </p>
+    <p>Publish a lost item on RECO </p>
     <ol>
         <li>Fill out the form.</li>
-        <li>Wait for text from possible owner</li>
+        <li>Wait for a text from a possible finder</li>
         <li>Ensure the details filled match the description</li>
         <li>Make sure the location of meet up is a safe place for both parties</li>
     </ol>
@@ -124,6 +124,8 @@
         }
     }
 </script>
+
+
 
 <!--location script not working
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCerAzjPeGPY5kEzCI71wP2mFktsfbky8k8&libraries=places&callback=whereAutocomplete" async defer></script>
