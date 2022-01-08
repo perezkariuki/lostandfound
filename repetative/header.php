@@ -31,7 +31,7 @@ $server = 'http://' . $_SERVER['SERVER_NAME'] . '/lostandfound/';
                     <li><a href="Login.php" data-after="Login">Login</a></li>
                     <li><a href="about.php" data-after="About">About</a></li>
                     <li><a href="contact.php" data-after="Contact">Contact us</a></li>
-                    <li><a href="logout.php" data-after="Logout">Logout</a></li>
+                    <li><a href="signup.php" data-after="Signup">Signup</a></li>
                   </ul>
                 </div>
               </div>

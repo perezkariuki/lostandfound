@@ -3,8 +3,10 @@
 <!--header navigation code-->
 <?php require('repetative/Main_header.php') ?>
 
+<?php require('repetative/access.php')?>
+
 <body>
-	<div class="">
+	<div class="tabtxt">
 	<br/><br/><h1>My Findings records</h1>
 	<a href="finder.php" class="btn">Add new record</a>
 	<br/><br/>

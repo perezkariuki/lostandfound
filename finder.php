@@ -3,6 +3,8 @@
 <!--header navigation code-->
 <?php require('repetative/Main_header.php') ?>
 
+<?php require('repetative/access.php')?>
+
 <style>
 <?php include 'css/style.css'; ?>
 </style>

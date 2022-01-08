@@ -1,10 +1,11 @@
 <?php require_once "controller.php"; ?>
-
-<!--header navigation code-->
+<!--header -->
 <?php require('repetative/Main_header.php') ?>
 
+<?php require('repetative/access.php')?>
+
 <body>
-	<div class="">
+	<div class="tabtxt">
 	<br/><br/><h1>My Lost items records</h1>
 	<a href="lost.php" class="btn">Add new record</a>
 	<br/><br/>

@@ -26,9 +26,10 @@ $server = 'http://' . $_SERVER['SERVER_NAME'] . '/lostandfound/';
                     <div class="bar"></div>
                   </div>
                   <ul>
-                    <li><a href="Finder.php" data-after="found">Found an Item</a></li>
-                    <li><a href="Lost.php" data-after="Lost">Lost an Item</a></li>
+                    <li><a href="Mainfinderspage.php" data-after="found">Found Items</a></li>
+                    <li><a href="Mainlostpage.php" data-after="Lost">Lost Items</a></li>
                     <li><a href="Search.php" data-after="Search">Search Items</a></li>
+                    <li><a href="#" data-after="Search">My Reports</a></li>
                     <li><a href="profile.php" data-after="Profile">Profile</a></li>
                     <li><a href="about.php" data-after="About">About</a></li>
                     <li><a href="contact.php" data-after="Contact">Contact us</a></li>
