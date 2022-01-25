@@ -5,10 +5,44 @@
 
 <?php require('repetative/access.php')?>
 
+<?php
+
+if(isset($_POST['search']))
+{
+    $valueToSearch = $_POST['valueToSearch'];
+    // search in all table columns
+    // using concat mysql function
+    $query = "SELECT * FROM `founditems` WHERE CONCAT(`img`, `category`, `brand`, `colour`,`datetime`, `location`, `description`) LIKE '%".$valueToSearch."%'";
+    $search_result = filterTable($query);
+    
+}
+ else {
+    $query = "SELECT * FROM `founditems`";
+    $search_result = filterTable($query);
+}
+
+// function to connect and execute the query
+function filterTable($query)
+{
+    $connect = mysqli_connect("localhost", "root", "", "lostandfound");
+    $filter_Result = mysqli_query($connect, $query);
+    return $filter_Result;
+}
+
+?>
+
+<!DOCTYPE html>
 <body>
 	<div class="tabtxt">
 	<br/><br/><h1>My Findings records</h1>
 	<a href="finder.php" class="btn">Add new record</a>
+	<br/><br/>
+	<form method="POST" action="Mainfinderspage.php">
+    <p>Search found items</p>
+	<div>
+		Search:<input type="text" name="valueToSearch" placeholder="Value To Search">
+            <input type="submit" name="search" value="Filter">
+	</div>
 	<br/><br/>
 	</div>
 	<div class="table" >
@@ -24,25 +58,25 @@
             <td>Description</td>
 			<td></td>
 		</tr>
-		<?php
-        $finds = mysqli_query($con, "SELECT * FROM founditems ORDER BY DATE (datetime) DESC");
 
-		while($fi= mysqli_fetch_assoc($finds)){
-
-			echo "<tr>";
-			echo "<td>".$fi['img']."</td>";
-			echo "<td>".$fi['category']."</td>";
-            echo "<td>".$fi['serial']."</td>";
-			echo "<td>".$fi['brand']."</td>";
-			echo "<td>".$fi['colour']."</td>";
-            echo "<td>".$fi['datetime']."</td>";
-            echo "<td>".$fi['location']."</td>";
-            echo "<td>".$fi['description']."</td>";
-			echo "<td><a href=\"chat.php?\">text owner</a></td>";
-			echo "</tr>";		
-		}
-		?>
-	</table>
-	</div>	
-</body>
+      <!-- populate table from mysql database -->
+                <?php while($fi = mysqli_fetch_array($search_result)):?>
+                <?php
+                    echo "<tr>";
+			        echo "<td>".$fi['img']."</td>";
+			        echo "<td>".$fi['category']."</td>";
+                    echo "<td>".$fi['serial']."</td>";
+			        echo "<td>".$fi['brand']."</td>";
+			        echo "<td>".$fi['colour']."</td>";
+                    echo "<td>".$fi['datetime']."</td>";
+                    echo "<td>".$fi['location']."</td>";
+                    echo "<td>".$fi['description']."</td>";
+			        echo "<td><a href=\"chat.php?\">text owner</a></td>";
+			        echo "</tr>";
+                    ?>
+                <?php endwhile;?>
+            </table>
+        </form>
+        
+    </body>
 </html>

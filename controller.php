@@ -52,7 +52,7 @@ if(isset($_POST['signup'])){
 }
 
 
-//Otp verification process(user_otp)
+//Otp verification process(reset_otp)
     if(isset($_POST['check_otp'])){
         $_SESSION['info'] = "";
         $otp_code = mysqli_real_escape_string($con, $_POST['otp']);
@@ -247,3 +247,4 @@ if(isset($_POST['lostdb'])){
             $errors['find-error'] = "Failed to upload your lost item";
         }
         }
+
