@@ -27,7 +27,6 @@ $server = 'http://' . $_SERVER['SERVER_NAME'] . '/lostandfound/';
                   </div>
                   <ul>
                     <li><a href="index.php" data-after="Publish">Publish Items</a></li>
-                    <li><a href="Search.php" data-after="Search">Search Items</a></li>
                     <li><a href="Login.php" data-after="Login">Login</a></li>
                     <li><a href="about.php" data-after="About">About</a></li>
                     <li><a href="contact.php" data-after="Contact">Contact us</a></li>

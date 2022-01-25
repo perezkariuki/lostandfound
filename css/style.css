@@ -355,6 +355,7 @@ a {
   margin: 5%;
   margin-top: 0%;
   margin-bottom: 0%;
+  margin-right: 10%;
 }
 .tab {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
@@ -381,5 +382,8 @@ a {
   padding-bottom: 12px;
   text-align: left;
   background-color: #4caf50;
+}
+.marg {
+  margin-right: 10%;
 }
 /*end of view table css */

@@ -37,7 +37,7 @@
             echo "<td>".$lo['datetime']."</td>";
             echo "<td>".$lo['location']."</td>";
             echo "<td>".$lo['description']."</td>";
-			echo "<td><a href=\"edit_lost.php?\">Edit</a> | <a href=\"delete.php? idLost='$lo[idLost]'\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";
+			echo "<td><a href=\"editlost.php?idLost=$lo[idLost]\">Edit</a> | <a href=\"deletel.php?idLost='$lo[idLost]'\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";
 			echo "</tr>";		
 		}
 		?>

@@ -38,7 +38,7 @@
             echo "<td>".$fi['datetime']."</td>";
             echo "<td>".$fi['location']."</td>";
             echo "<td>".$fi['description']."</td>";
-			echo "<td><a href=\"edit_finds.php?\">Edit</a> | <a href=\"delete.php? idFound='$fi[idFound]'\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";
+			echo "<td><a href=\"editfind.php?idFound=$fi[idFound]\">Edit</a> | <a href=\"deletef.php?idFound='$fi[idFound]'\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";
 			echo "</tr>";		
 		}
 		?>
