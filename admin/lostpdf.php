@@ -8,8 +8,8 @@
       while($row = mysqli_fetch_array($result))  
       {       
       $output .= '<tr>  
-                          <td>'.$row["idLost"].'</td>  
-                          <td>'.$row["img"].'</td>  
+                          <td>'.$row["idLost"].'</td>
+                          <td>'.'<img src="../img/'.$row['img'].'" width="100px", height:"100px">'.'</td>
                           <td>'.$row["category"].'</td>  
                           <td>'.$row["serial"].'</td>  
                           <td>'.$row["brand"].'</td>
@@ -23,7 +23,7 @@
       }  
       return $output;  
  }  
- if(isset($_POST["create_pdf"]))  
+ if(isset($_POST["lost_pdf"]))  
  {  
       require_once('../tcpdf/tcpdf.php');  
       $obj_pdf = new TCPDF('P', PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);  
@@ -48,8 +48,8 @@
                <th width="10%">IdLost</th>  
                <th width="15%">img</th>  
                <th width="15%">category</th>  
-               <th width="20%">serial</th>  
-               <th width="35%">brand</th>
+               <th width="15%">serial</th>  
+               <th width="10%">brand</th>
                <th width="12%">colour</th>
                <th width="12%">datetime</th> 
                <th width="12%">location</th> 
@@ -80,7 +80,7 @@
                                <th width="15%">img</th>  
                                <th width="15%">category</th>  
                                <th width="20%">serial</th>  
-                               <th width="35%">brand</th>
+                               <th width="20%">brand</th>
                                <th width="12%">colour</th>
                                <th width="12%">datetime</th> 
                                <th width="12%">location</th> 
@@ -93,7 +93,7 @@
                      </table>  
                      <br />  
                      <form method="post">  
-                          <input type="submit" name="create_pdf" class="btn btn-danger" value="Create PDF" />  
+                          <input type="submit" name="lost_pdf" class="btn btn-danger" value="Create PDF" />  
                      </form>  
                 </div>  
            </div>  

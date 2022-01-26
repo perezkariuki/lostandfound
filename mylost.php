@@ -29,7 +29,7 @@
 		while($lo= mysqli_fetch_assoc($lost)){
 
 			echo "<tr>";
-			echo "<td>".$lo['img']."</td>";
+			echo "<td>".'<img src="img/'.$lo['img'].'" width="100px", height:"100px">'."</td>";
 			echo "<td>".$lo['category']."</td>";
             echo "<td>".$lo['serial']."</td>";
 			echo "<td>".$lo['brand']."</td>";

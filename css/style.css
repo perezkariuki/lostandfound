@@ -14,6 +14,7 @@ html {
 }
 a {
   text-decoration: none;
+  color: rgb(38, 0, 255);
 }
 .container {
   min-height: 100vh;
@@ -62,7 +63,7 @@ a {
 }
 #header .header {
   min-height: 8vh;
-  background-color: rgba(31, 30, 30, 0.24);
+  background-color: #19a58f;
   transition: 0.3s ease background-color;
 }
 #header .nav-bar {
@@ -229,22 +230,35 @@ a {
   justify-content: flex-start;
 }
 #main-body h2 {
-  display: block;
+  font-weight: 500;
   width: fit-content;
   font-size: 2rem;
+  color: #fff;
 }
-
+#main-body h1 {
+  font-weight: 500;
+  width: fit-content;
+  font-size: 2rem;
+  color: #fff;
+}
 /* End main-body Section */
 
 /* login Section */
 
 #login-form {
-  width: 350px;
+  width: 450px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   position: absolute;
-  color: #fff;
+  color: black;
+  border-radius: 15px;
+  border: 3px solid #19a58f;
+  padding-right: 30px;
+  padding-left: 30px;
+  padding-bottom: 10px;
+  width: auto;
+  height: auto;
 }
 #login-form h1 {
   font-size: 30px;
@@ -276,6 +290,10 @@ a {
   border-radius: 5px;
   border: 0;
 }
+#login-form button:hover {
+  color: white;
+  background-color: #19a58f;
+}
 
 /* End of Login Section */
 
@@ -286,7 +304,7 @@ a {
   left: 50%;
   transform: translate(-50%, -50%);
   position: absolute;
-  color: #fff;
+  color: black;
   margin-top: 3%;
 }
 #report-form h1 {

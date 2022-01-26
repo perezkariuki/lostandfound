@@ -3,21 +3,17 @@
  {  
       $output = '';  
       $connect = mysqli_connect("localhost", "root", "", "lostandfound");  
-      $sql = "SELECT * FROM  lostitems ORDER BY idLost ASC";  
+      $sql = "SELECT * FROM credentials ORDER BY id ASC";  
       $result = mysqli_query($connect, $sql);  
       while($row = mysqli_fetch_array($result))  
       {       
       $output .= '<tr>  
-                          <td>'.$row["idLost"].'</td>  
-                          <td>'.$row["img"].'</td>  
-                          <td>'.$row["category"].'</td>  
-                          <td>'.$row["serial"].'</td>  
-                          <td>'.$row["brand"].'</td>
-                          <td>'.$row["colour"].'</td>
-                          <td>'.$row["datetime"].'</td>
-                          <td>'.$row["location"].'</td>
-                          <td>'.$row["description"].'</td>
-                          <td>'.$row["credentials_id"].'</td>   
+                          <td>'.$row["id"].'</td>  
+                          <td>'.$row["FirstName"].'</td>  
+                          <td>'.$row["LastName"].'</td>  
+                          <td>'.$row["Phone"].'</td>  
+                          <td>'.$row["email"].'</td>
+                          <td>'.$row["status"].'</td>    
                      </tr>  
                           ';  
       }  
@@ -45,16 +41,12 @@
       <h3 align="center">Exporting User Verification Form to Pdf</h3><br /><br />  
       <table border="1" cellspacing="0" cellpadding="5">  
           <tr>  
-               <th width="10%">IdLost</th>  
-               <th width="15%">img</th>  
-               <th width="15%">category</th>  
-               <th width="20%">serial</th>  
-               <th width="35%">brand</th>
-               <th width="12%">colour</th>
-               <th width="12%">datetime</th> 
-               <th width="12%">location</th> 
-               <th width="12%">description</th>
-               <th width="12%">credentials_id</th>  
+               <th width="10%">ID</th>  
+               <th width="15%">First Name</th>  
+               <th width="15%">Last Name</th>  
+               <th width="20%">Phone</th>  
+               <th width="35%">Email</th>
+               <th width="12%">Status</th> 
           </tr>  
       ';  
       $content .= fetch_data();  
@@ -76,16 +68,12 @@
                 <div class="table-responsive">  
                      <table class="table table-bordered">  
                           <tr>  
-                               <th width="10%">IdLost</th>  
-                               <th width="15%">img</th>  
-                               <th width="15%">category</th>  
-                               <th width="20%">serial</th>  
-                               <th width="35%">brand</th>
-                               <th width="12%">colour</th>
-                               <th width="12%">datetime</th> 
-                               <th width="12%">location</th> 
-                               <th width="12%">description</th>
-                               <th width="12%">credentials_id</th> 
+                               <th width="10%">ID</th>  
+                               <th width="15%">First Name</th>  
+                               <th width="15%">Last Name</th>  
+                               <th width="20%">Phone</th>  
+                               <th width="35%">Email</th>
+                               <th width="12%">Status</th> 
                           </tr>  
                      <?php  
                      echo fetch_data();  

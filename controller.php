@@ -15,6 +15,7 @@ if(isset($_POST['signup'])){
     $email = mysqli_real_escape_string($con, $_POST['email']);
     $password = mysqli_real_escape_string($con, $_POST['password']);
     $conpassword = mysqli_real_escape_string($con, $_POST['conpassword']);
+    $usertype = mysqli_real_escape_string($con, $_POST['usertype']);
     if($password !== $conpassword){
         $errors['password'] = "Confirm password not matched!";
     }
@@ -27,8 +28,8 @@ if(isset($_POST['signup'])){
         $encpassword = password_hash($password, PASSWORD_BCRYPT);
         $code = rand(999999, 111111);
         $status = "notverified";
-        $insert_data = "INSERT INTO credentials (FirstName, LastName, Phone, email, password, code, status)
-                        values('$FirstName', '$LastName', '$Phone', '$email', '$encpassword', '$code', '$status')";
+        $insert_data = "INSERT INTO credentials (FirstName, LastName, Phone, email, password, code, status,usertype)
+                        values('$FirstName', '$LastName', '$Phone', '$email', '$encpassword', '$code', '$status', '$usertype')";
         $data_check = mysqli_query($con, $insert_data);
         if($data_check){
             $subject = "Email Verification Code";
@@ -93,13 +94,20 @@ if(isset($_POST['signup'])){
                 $_SESSION['email'] = $email;
                 $status = $fetch['status'];
                 if($status == 'verified'){
-                  $_SESSION['email'] = $email;
-                  $_SESSION['password'] = $password;
-                    header('location: index.php');
+                    $usertype = $fetch['usertype'];
+                    if($usertype == 'admin'){
+                        $_SESSION['email'] = $email;
+                        $_SESSION['password'] = $password;
+                        header('location: http://localhost/lostandfound/admin/admin.php');
+                    }else if($usertype == 'user'){
+                        $_SESSION['email'] = $email;
+                        $_SESSION['password'] = $password;
+                        header('location: index.php');
+                    }
                 }else{
                     $info = "It's look like you haven't still verify your email - $email";
                     $_SESSION['info'] = $info;
-                    header('location: user_otp.php');
+                    header('location: check_otp.php');
                 }
             }else{
                 $errors['email'] = "Incorrect email or password!";

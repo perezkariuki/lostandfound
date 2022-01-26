@@ -15,10 +15,10 @@ if($email != false && $password != false){
                 header('Location: reset_otp.php');
             }
         }else{
-            header('Location: user_otp.php');
+            header('Location: check_otp.php');
         }
     }
 }else{
-    header('Location: login.php');
+    header('Location: http://localhost/lostandfound/login.php');
 }
 ?>

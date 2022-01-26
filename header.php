@@ -8,5 +8,4 @@
   <title>Realtime Chat App | CodingNepal</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
->>>>>>> e92d8ae4e37083a31d7cd64ab092bd74adf18e8a
 </head>

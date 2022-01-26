@@ -63,7 +63,7 @@ function filterTable($query)
                 <?php while($fi = mysqli_fetch_array($search_result)):?>
                 <?php
                     echo "<tr>";
-			        echo "<td>".$fi['img']."</td>";
+                    echo "<td>".'<img src="img/'.$fi['img'].'" width="100px", height:"100px">'."</td>";
 			        echo "<td>".$fi['category']."</td>";
                     echo "<td>".$fi['serial']."</td>";
 			        echo "<td>".$fi['brand']."</td>";

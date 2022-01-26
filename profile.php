@@ -1,7 +1,7 @@
 <?php require_once "controller.php"; ?>
 
 <!--header navigation code-->
-<?php require('repetative/header.php')?>
+<?php require('repetative/Main_header.php')?>
 
 <div id="login-form">
     <h1>Profile Form</h1>

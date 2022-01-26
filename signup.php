@@ -48,6 +48,7 @@
         <input type="password" name="password" placeholder="Password">
         <p>Confirm Password</p>
         <input type="password" name="conpassword" placeholder="Confirm Password">
+        <input type="hidden" name="usertype" value="user">
         <button type="submit" name ="signup" value="Signup">Create</button>
     </form>      
 </div>

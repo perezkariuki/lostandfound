@@ -9,6 +9,7 @@ CREATE TABLE `credentials` (
     `password` varchar(255) NOT NULL,
     `code` mediumint(50) NOT NULL,
     `status` text NOT NULL,
+    `usertype` varchar(255) NOT NULL,
     PRIMARY KEY(`id`);
 
 CREATE TABLE `foundItems`(

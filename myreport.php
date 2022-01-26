@@ -47,7 +47,7 @@
 		while($fi= mysqli_fetch_assoc($finds)){
 
 			echo "<tr>";
-			echo "<td>".$fi['img']."</td>";
+			echo "<td>".'<img src="img/'.$fi['img'].'" width="100px", height:"100px">'."</td>";
 			echo "<td>".$fi['category']."</td>";
             echo "<td>".$fi['serial']."</td>";
 			echo "<td>".$fi['brand']."</td>";
@@ -91,7 +91,7 @@
 		while($lo= mysqli_fetch_assoc($lost)){
 
 			echo "<tr>";
-			echo "<td>".$lo['img']."</td>";
+			echo "<td>".'<img src="img/'.$lo['img'].'" width="100px", height:"100px">'."</td>";
 			echo "<td>".$lo['category']."</td>";
             echo "<td>".$lo['serial']."</td>";
 			echo "<td>".$lo['brand']."</td>";
