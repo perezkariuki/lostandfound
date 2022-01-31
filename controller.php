@@ -228,6 +228,7 @@ if(isset($_POST['finderdb'])){
 
     if(mysqli_query($con, $sql)){
         echo "<h3>data stored in a database successfully.";
+        header('Location: index.php');
 
     } else{
         $errors['find-error'] = "Failed to upload your findings";
@@ -250,6 +251,7 @@ if(isset($_POST['lostdb'])){
     
         if(mysqli_query($con, $sqln)){
             echo "<h3>data stored in a database successfully.";
+            header('Location: index.php');
     
         } else{
             $errors['find-error'] = "Failed to upload your lost item";

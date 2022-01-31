@@ -32,7 +32,7 @@
         <div class="sidebar">
            <!--profile image & text-->
            <div class="profile">
-                <img src="https://1.bp.blogspot.com/-vhmWFWO2r8U/YLjr2A57toI/AAAAAAAACO4/0GBonlEZPmAiQW4uvkCTm5LvlJVd_-l_wCNcBGAsYHQ/s16000/team-1-2.jpg" alt="profile_picture">
+                <img src="../img/image1.jpg" alt="profile_picture">
                 <h3><?php echo $fetch_info['FirstName'] ?> <?php echo $fetch_info['LastName'] ?></h3>
                 <p>Admin</p>
             </div>
